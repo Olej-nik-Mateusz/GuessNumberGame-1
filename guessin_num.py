@@ -16,42 +16,41 @@ centre_list_index = int (len  #
 # Loop which checks the answer:
 while True:
     pc_guess =  num_list[centre_list_index]
-    answer = input (f"Mój strzał to: \n {pc_guess} \n Trafiłem? odp: dużo/mało/dycha \n >>>")
+    answer = input (f"My guess is: \n {pc_guess} \n Is it the right number? Write: High , Low or Yes \n >>>")
     
 # When the number is correctly picked  
-    if answer == "dycha":
-        print("Strzał w dziesiątkę")
+    if answer.lower == "yes":
         guess_counter += 1
         break
 
 # When guessed number is to low
-    elif answer == "mało":
+    elif answer.lower == "low":
        num_list = num_list[centre_list_index:max_num]
        centre_list_index = int(len(num_list)/2)
        guess_counter += 1
 
 # When answer say its too low but only 1 number in a list position left
        if len(num_list) == 1:
-            print(f"{num_list[0]} musi być właściwym numerem")
+            print(f"{num_list[0]} must be the right number, or You lied in answers")
             break
 
 # When guessed number is too high
-    elif answer == "dużo":
+    elif answer.lower == "high":
         num_list = num_list[ min_num: centre_list_index]
         centre_list_index=int(len(num_list)/2)
         guess_counter+=1
 
 # When answer say its too high but only 1 number in a list position left 
         if len(num_list)==1:
-            print(f"{num_list[0]} musi być właściwym numerem")
+            print(f"{num_list[0]} must be Your number, or You lied in answers")
             break
 
 # If answer contains chars not specified in input quotation
     else:
-        print("Zły format")
+        print("Wrong format. Please, write ")
         continue
 
 # Print the summary after the game.    
-print(f" Twój numer to {pc_guess}. \n Udało Mi się w {guess_counter} próbach")
+print(f" Your number is: {pc_guess}. \n I got it after {guess_counter} guesses")
 
    
