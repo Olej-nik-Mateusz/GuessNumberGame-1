@@ -1,13 +1,3 @@
-# GUESSING GAME:
-# Pick the int. number between 0 and 1000
-# Your PC will try to guess this number. 
-# In terminal write answer: 
-# "high" - if it's to high number
-# "low" - if it's to low 
-# "yes" - if PC called right number.
-# Have a fun finding out how many guesses Your PC need to pick the right number. 
-
-
 import random
 
 max_num = 1000          # Maximum value of picked number
