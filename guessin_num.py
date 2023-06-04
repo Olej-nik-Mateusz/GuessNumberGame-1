@@ -19,12 +19,14 @@ while True:
     answer = input (f"My guess is: \n {pc_guess} \n Is it the right number? Write: High , Low or Yes \n >>>")
     
 # When the number is correctly picked  
-    if answer.lower == "yes":
+    if answer.lower() == "yes":
+        print("yes")
         guess_counter += 1
         break
 
 # When guessed number is to low
-    elif answer.lower == "low":
+    elif answer.lower() == "low":
+       print("low")
        num_list = num_list[centre_list_index:max_num]
        centre_list_index = int(len(num_list)/2)
        guess_counter += 1
@@ -35,7 +37,8 @@ while True:
             break
 
 # When guessed number is too high
-    elif answer.lower == "high":
+    elif answer.lower() == "high":
+        print("high")
         num_list = num_list[ min_num: centre_list_index]
         centre_list_index=int(len(num_list)/2)
         guess_counter+=1
@@ -47,7 +50,7 @@ while True:
 
 # If answer contains chars not specified in input quotation
     else:
-        print("Wrong format. Please, write ")
+        print("Wrong format. Please, write again: high, low or yes")
         continue
 
 # Print the summary after the game.    
